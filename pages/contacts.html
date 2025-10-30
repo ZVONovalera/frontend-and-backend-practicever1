@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        /* Стили для модального окна */
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        dialog {
+            border: none;
+            border-radius: 12px;
+            padding: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease;
+            max-width: 500px;
+            width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            /* Центрирование */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px 12px 0 0;
+            margin: 0;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .modal-content {
+            padding: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #2c3e50;
+            border: 2px solid #e9ecef;
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+        
+        .required {
+            color: #e74c3c;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 600px) {
+            dialog {
+                margin: 0;
+                width: 95vw;
+                max-width: 95vw;
+            }
+            .modal-actions {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* Стиль для кнопки открытия модального окна */
+        .modal-trigger {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto;
+            display: block;
+            font-weight: 600;
+        }
+
+        .modal-trigger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="page-container">
+        
+        <header class="header">
+            <h1>Свяжитесь с нами</h1>
+        </header>
+        
+        
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        
+        
+        <main class="content">
+            
+            <section class="page-header" aria-labelledby="page-title">
+                <h1 id="page-title" class="page-title">Контакты</h1>
+                <p class="page-subtitle">Мы всегда рады общению! Не стесняйтесь обращаться</p>
+            </section>
+            
+            
+            <section class="contacts-container" aria-labelledby="contact-cards">
+                <h2 id="contact-cards" class="visually-hidden">Способы связи</h2>
+                
+                <article class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3 class="contact-title">Электронная почта</h3>
+                    <p class="contact-info">vovanya@mail.ru</p>
+                    <a href="mailto:vovanya@mail.ru" class="contact-button">Написать письмо</a>
+                </article>
+                
+                <article class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3 class="contact-title">Адрес</h3>
+                    <p class="contact-info">г. Москва, ул. Колотушкина, д. 25, кв 14</p>
+                    <button class="contact-button" onclick="showMap()">Посмотреть на карте</button>
+                </article>
+                
+                <article class="contact-card highlight">
+                    <div class="contact-icon">📞</div>
+                    <h3 class="contact-title">Телефон</h3>
+                    <p class="contact-info">+7 (999) 123-45-67</p>
+                    <button class="contact-button urgent" onclick="window.location.href='tel:+79991234567'">
+                        📢 Позвоните мне ПОЖАЛУЙСТА, МНЕ ТАК ОДИНОКО
+                    </button>
+                </article>
+
+                <!-- Кнопка для открытия модального окна -->
+                <button class="modal-trigger" onclick="contactModal.showModal()">
+                    📝 Связаться с нами через форму
+                </button>
+            </section>
+            
+            
+            <section class="contact-form" aria-labelledby="contact-form-title">
+                <h2 id="contact-form-title" class="form-title">Напишите нам</h2>
+                <form class="form">
+                    <div class="form-group">
+                        <label for="name" class="visually-hidden">Ваше имя</label>
+                        <input type="text" id="name" placeholder="Ваше имя" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="visually-hidden">Ваш email</label>
+                        <input type="email" id="email" placeholder="Ваш email" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="visually-hidden">Ваше сообщение</label>
+                        <textarea id="message" placeholder="Ваше сообщение..." class="form-textarea" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="form-button">Отправить сообщение</button>
+                </form>
+            </section>
+        </main>
+        
+        
+        <footer class="footer">
+            <p>© 2025 Всегда на связи.</p>
+        </footer>
+    </div>
+
+    <!-- Модальное окно для формы обратной связи -->
+    <dialog id="contactModal">
+        <div class="modal-header">
+            <h2>Форма обратной связи</h2>
+        </div>
+        <div class="modal-content">
+            <form id="feedbackForm" method="dialog">
+                <div class="form-group">
+                    <label for="modal-name">Имя <span class="required">*</span></label>
+                    <input type="text" id="modal-name" name="name" required placeholder="Введите ваше имя">
+                </div>
+                
+                <div class="form-group">
+                    <label for="modal-phone">Телефон <span class="required">*</span></label>
+                    <input type="tel" id="modal-phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                </div>
+                
+                <div class="form-group">
+                    <label for="modal-email">Электронная почта <span class="required">*</span></label>
+                    <input type="email" id="modal-email" name="email" required placeholder="example@mail.ru">
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Категория обращения <span class="required">*</span></label>
+                    <select id="category" name="category" required>
+                        <option value="">Выберите категорию</option>
+                        <option value="technical">Техническая поддержка</option>
+                        <option value="commercial">Коммерческое предложение</option>
+                        <option value="cooperation">Сотрудничество</option>
+                        <option value="complaint">Жалоба</option>
+                        <option value="suggestion">Предложение</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modal-message">Текст обращения <span class="required">*</span></label>
+                    <textarea id="modal-message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-secondary">Отмена</button>
+                    <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <script>
+        function showMap() {
+            alert('Карта: г. Москва, ул. Колотушкина, д. 25, кв 14\n(Это демо-версия)');
+        }
+
+        // Функция для отправки формы
+        function submitForm() {
+            const form = document.getElementById('feedbackForm');
+            const formData = new FormData(form);
+            
+            // Простая валидация
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            
+            // Собираем данные формы
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                category: formData.get('category'),
+                message: formData.get('message')
+            };
+            
+            // В реальном приложении здесь был бы AJAX-запрос
+            console.log('Данные формы:', data);
+            
+            // Показываем уведомление об успешной отправке
+            alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
+            
+            // Закрываем модальное окно
+            contactModal.close();
+            
+            // Очищаем форму
+            form.reset();
+        }
+        
+        // Закрытие модального окна по клику на фон
+        document.getElementById('contactModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                this.close();
+            }
+        });
+        
+        // Обработка отправки формы через Enter (предотвращаем стандартное поведение)
+        document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' && event.target.type !== 'textarea') {
+                event.preventDefault();
+            }
+        });
+
+        // Фокус на первом поле при открытии модального окна
+        document.getElementById('contactModal').addEventListener('close', function() {
+            document.getElementById('modal-name').focus();
+        });
+    </script>
+</body>
+</html>
