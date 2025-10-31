@@ -9,95 +9,97 @@
 </head>
 
 <body>
-    <div class="page-container">
-        <!-- HEADER -->
+    <div class="page">
+        
         <header class="header">
-            <h1>Новостной портал</h1>
+            <h1 class="header__title">Новостной портал</h1>
         </header>
         
-        <!-- NAVIGATION -->
         <nav class="nav" aria-label="Основная навигация">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
             </ul>
         </nav>
         
-        <!-- MAIN CONTENT -->
         <main class="content">
-            <!-- PAGE HEADER SECTION -->
+            
             <section class="page-header" aria-labelledby="page-title">
-                <h1 id="page-title" class="page-title">Последние новости</h1>
-                <p class="page-subtitle">Самые свежие и горячие события из мира политики, технологий и криминала</p>
+                <h1 id="page-title" class="page-header__title">Последние новости</h1>
+                <p class="page-header__subtitle">Самые свежие и горячие события из мира политики, технологий и криминала</p>
             </section>
             
-            <!-- NEWS ARTICLES SECTION -->
-            <section class="news-container" aria-labelledby="news-heading">
+            <section class="news" aria-labelledby="news-heading">
                 <h2 id="news-heading" class="visually-hidden">Список новостных статей</h2>
                 
-                <!-- ARTICLE 1 -->
-                <article class="news-article">
-                    <header class="news-header">
-                        <div class="news-meta">
-                            <time class="news-date" datetime="2025-03-15">15 марта 2025</time>
-                            <address class="news-author">Вованя Ровный</address>
-                            <span class="news-category politics">Политика</span>
+                <article class="article">
+                    <header class="article__header">
+                        <div class="article__meta">
+                            <time class="article__date" datetime="2025-03-15">15 марта 2025</time>
+                            <address class="article__author">Вованя Ровный</address>
+                            <span class="article__category article__category--politics">Политика</span>
                         </div>
-                        <h2 class="news-title">Че там у птицелюда?</h2>
+                        <h2 class="article__title">Че там у птицелюда?</h2>
                     </header>
-                    <div class="news-content">
-                        <p>Трамп недоволен наследниками Щедрина, убитыми прижимной плитой фильтра для фритюра "FRANKE" в Приморье</p>
+                    <div class="article__content">
+                        <p class="article__text">Трамп недоволен наследниками Щедрина, убитыми прижимной плитой фильтра для фритюра "FRANKE" в Приморье</p>
                     </div>
                 </article>
                 
-                <!-- ARTICLE 2 - FEATURED -->
-                <article class="news-article featured">
-                    <header class="news-header">
-                        <div class="news-meta">
-                            <time class="news-date" datetime="2025-03-16">16 марта 2025</time>
-                            <address class="news-author">Илья Давыдов</address>
-                            <span class="news-category technology">Технологии</span>
+                <article class="article article--featured">
+                    <header class="article__header">
+                        <div class="article__meta">
+                            <time class="article__date" datetime="2025-03-16">16 марта 2025</time>
+                            <address class="article__author">Илья Давыдов</address>
+                            <span class="article__category article__category--technology">Технологии</span>
                         </div>
-                        <h2 class="news-title">На орбите газовой инновации</h2>
+                        <h2 class="article__title">На орбите газовой инновации</h2>
                     </header>
-                    <div class="news-content">
-                        <p>Известный медийщик и провокатор Юрий Хованский, известный в определенных кругах под философским псевдонимом «Газонюх-пуковдых», шокировал публику, объявив о уходе с YouTube и запуске высокотехнологичного стартапа.</p>
+                    <div class="article__content">
+                        <p class="article__text">Известный медийщик и провокатор Юрий Хованский, известный в определенных кругах под философским псевдонимом «Газонюх-пуковдых», шокировал публику, объявив о уходе с YouTube и запуске высокотехнологичного стартапа.</p>
                         
-                        <p>Компания, зарегистрированная под названием «Газонюх Labs», будет заниматься разработкой и внедрением инновационных решений в области альтернативной энергетики. Первым продуктом, как заявил сам Хованский в своем Telegram-канале, станет биогазовый реактор «Пуковдых 1.0».</p>
+                        <p class="article__text">Компания, зарегистрированная под названием «Газонюх Labs», будет заниматься разработкой и внедрением инновационных решений в области альтернативной энергетики. Первым продуктом, как заявил сам Хованский в своем Telegram-канале, станет биогазовый реактор «Пуковдых 1.0».</p>
                         
-                        <p>«Всем салют! Ребята, надоело это всё: влоги, стримы, духи-говнищи. Я ухожу в большую науку. Представляете, какой потенциал у человечества в плане метана? Мы его просто так в атмосферу пускаем, а могли бы заправлять автомобили и отапливать дома. Я, как главный газонюх и пуковдых, беру на себя ответственность за энергетический переход России», — написал медиадеятель.</p>
+                        <p class="article__text">«Всем салют! Ребята, надоело это всё: влоги, стримы, духи-говнищи. Я ухожу в большую науку. Представляете, какой потенциал у человечества в плане метана? Мы его просто так в атмосферу пускаем, а могли бы заправлять автомобили и отапливать дома. Я, как главный газонюх и пуковдых, беру на себя ответственность за энергетический переход России», — написал медиадеятель.</p>
                     </div>
                 </article>
                 
-                <!-- ARTICLE 3 -->
-                <article class="news-article">
-                    <header class="news-header">
-                        <div class="news-meta">
-                            <time class="news-date" datetime="2025-03-18">18 марта 2025</time>
-                            <address class="news-author">Генадий Чернецов</address>
-                            <span class="news-category crime">Криминал</span>
+                <article class="article">
+                    <header class="article__header">
+                        <div class="article__meta">
+                            <time class="article__date" datetime="2025-03-18">18 марта 2025</time>
+                            <address class="article__author">Генадий Чернецов</address>
+                            <span class="article__category article__category--crime">Криминал</span>
                         </div>
-                        <h2 class="news-title">Криминалистика. Кошмары. Денди - новая реальность.</h2>
+                        <h2 class="article__title">Криминалистика. Кошмары. Денди - новая реальность.</h2>
                     </header>
-                    <div class="news-content">
-                        <p>Юрий Хованский (известный как Газонюх-Пуковдых) найден у помойки с гаечным ключом в руке. По версии следствия, это была «стрелка» за нарушение тюремных понятий.</p>
+                    <div class="article__content">
+                        <p class="article__text">Юрий Хованский (известный как Газонюх-Пуковдых) найден у помойки с гаечным ключом в руке. По версии следствия, это была «стрелка» за нарушение тюремных понятий.</p>
                         
-                        <p>Хованский, принадлежавший к масти «Водолаз» (где положено с уважением относиться к атмосфере старших), совершил беспредел — попытался наладить независимое производство метана через свой реактор «Пуковдых 1.0». Это сочли попыткой создать новую масть.</p>
+                        <p class="article__text">Хованский, принадлежавший к масти «Водолаз» (где положено с уважением относиться к атмосфере старших), совершил беспредел — попытался наладить независимое производство метана через свой реактор «Пуковдых 1.0». Это сочли попыткой создать новую масть.</p>
                         
-                        <p>По криминальным понятиям, ему был вынесен вердикт «заключить самого себя». Ключ в руке — символ индустриализации, а также орудие убийства. Пацаны смотрят на это с уважением.</p>
+                        <p class="article__text">По криминальным понятиям, ему был вынесен вердикт «заключить самого себя». Ключ в руке — символ индустриализации, а также орудие убийства. Пацаны смотрят на это с уважением.</p>
                     </div>
                 </article>
             </section>
         </main>
         
-        <!-- FOOTER -->
         <footer class="footer">
-            <p>© 2025 Новостной портал. Самые свежие новости без цензуры.</p>
+            <p class="footer__text">© 2025 Новостной портал. Самые свежие новости без цензуры.</p>
         </footer>
     </div>
 </body>
-
 </html>

@@ -9,88 +9,116 @@
 </head>
 
 <body>
-    
-    <div class="page-container">
+    <!-- page - корневой блок -->
+    <div class="page">
         
-        <header class="header">
-            <h1>Каталог товаров</h1>
+        <!-- header - блок -->
+        <header class="header header--catalog"> <!-- Модификатор для страницы каталога -->
+            <h1 class="header__title">Каталог товаров</h1>
         </header>
         
-        
+        <!-- nav - блок (единообразно с главной страницей) -->
         <nav class="nav" aria-label="Основная навигация">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="goods.html">Товары</a> <!-- Модификатор активной страницы -->
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
             </ul>
         </nav>
         
-        
+        <!-- content - блок -->
         <main class="content">
             
+            <!-- page-header - блок -->
             <section class="page-header" aria-labelledby="page-title">
-                <h1 id="page-title" class="page-title">Наши товары</h1>
-                <p class="page-subtitle">Лучшие продукты для настоящих ценителей</p>
+                <h1 id="page-title" class="page-header__title">Наши товары</h1>
+                <p class="page-header__subtitle">Лучшие продукты для настоящих ценителей</p>
             </section>
             
-            
-            <section class="products-section" aria-labelledby="products-heading">
+            <!-- products - блок -->
+            <section class="products" aria-labelledby="products-heading">
                 <h2 id="products-heading" class="visually-hidden">Список товаров</h2>
                 
-                
-                <div class="products-grid">
+                <!-- products__grid - элемент -->
+                <div class="products__grid">
                     
+                    <!-- product-card - блок -->
                     <article class="product-card">
-                        <div class="product-image">
-                            <img src="../images/rvotniki.jpg" alt="Сдобный рвотничек пряный" class="product-img">
+                        <div class="product-card__image">
+                            <img src="../images/rvotniki.jpg" alt="Сдобный рвотничек пряный" class="product-card__img">
                         </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Рвотничек</h3>
-                            <p class="product-price">15 руб.</p>
-                            <p class="product-description">Сдобный рвотничек пряный нормальный</p>
-                            <button class="product-button" aria-label="Добавить Рвотничек в корзину">
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Рвотничек</h3>
+                            <p class="product-card__price product-card__price--discount">15 руб.</p> <!-- Модификатор цены со скидкой -->
+                            <p class="product-card__description">Сдобный рвотничек пряный нормальный</p>
+                            <button class="product-card__button" aria-label="Добавить Рвотничек в корзину">
                                 В корзину
                             </button>
                         </div>
                     </article>
                     
                     <article class="product-card">
-                        <div class="product-image">
-                            <img src="../images/zuzish.jpg" alt="Зузыши миланские на развес 1 кг" class="product-img">
+                        <div class="product-card__image">
+                            <img src="../images/zuzish.jpg" alt="Зузыши миланские на развес 1 кг" class="product-card__img">
                         </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Зузыши 1 кг</h3>
-                            <p class="product-price">500 руб.</p>
-                            <p class="product-description">Зузыши на развес, толковые миланские зузыши</p>
-                            <button class="product-button" aria-label="Добавить Зузыши в корзину">
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Зузыши 1 кг</h3>
+                            <p class="product-card__price">500 руб.</p>
+                            <p class="product-card__description">Зузыши на развес, толковые миланские зузыши</p>
+                            <button class="product-card__button product-card__button--popular" aria-label="Добавить Зузыши в корзину">
+                                В корзину
+                            </button> <!-- Модификатор популярного товара -->
+                        </div>
+                    </article>
+                    
+                    <article class="product-card product-card--premium"> <!-- Модификатор премиум товара -->
+                        <div class="product-card__image">
+                            <img src="../images/airman.webp" alt="Горный алтайский воздух" class="product-card__img">
+                        </div>
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Воздух алтайский</h3>
+                            <p class="product-card__price product-card__price--premium">1000 руб.</p> <!-- Модификатор премиум цены -->
+                            <p class="product-card__description">Нормальный воздух, горный</p>
+                            <button class="product-card__button" aria-label="Добавить Воздух алтайский в корзину">
                                 В корзину
                             </button>
                         </div>
                     </article>
-                    
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="../images/airman.webp" alt="Горный алтайский воздух" class="product-img">
+
+                    <!-- Можно добавить товар с модификатором отсутствия -->
+                    <article class="product-card product-card--out-of-stock"> <!-- Модификатор отсутствующего товара -->
+                        <div class="product-card__image">
+                            <img src="../images/sold-out.jpg" alt="Товар закончился" class="product-card__img product-card__img--grayscale">
                         </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Воздух алтайский</h3>
-                            <p class="product-price">1000 руб.</p>
-                            <p class="product-description">Нормальный воздух, горный</p>
-                            <button class="product-button" aria-label="Добавить Воздух алтайский в корзину">
-                                В корзину
-                            </button>
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Ровшановские котлеты</h3>
+                            <p class="product-card__price">999 руб.</p>
+                            <p class="product-card__description">Распроданы, ждем поставку</p>
+                            <button class="product-card__button product-card__button--disabled" aria-label="Товар временно отсутствует" disabled>
+                                Нет в наличии
+                            </button> <!-- Модификатор неактивной кнопки -->
                         </div>
                     </article>
                 </div>
             </section>
         </main>
         
-        <footer class="footer">
-            <p>© 2025 Магазин уникальных товаров. Все права защищены.</p>
+        <!-- footer - блок -->
+        <footer class="footer footer--catalog"> <!-- Модификатор для футера каталога -->
+            <p class="footer__text">© 2025 Магазин уникальных товаров. Все права защищены.</p>
         </footer>
     </div>
 </body>
-
 </html>
