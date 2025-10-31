@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товары</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+    
+    <div class="page">
+        
+        
+        <header class="header header--catalog"> 
+            <h1 class="header__title">Каталог товаров</h1>
+        </header>
+        
+        
+        <nav class="nav" aria-label="Основная навигация">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="goods.html">Товары</a> <!-- Модификатор активной страницы -->
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        
+        
+        <main class="content">
+            
+            
+            <section class="page-header" aria-labelledby="page-title">
+                <h1 id="page-title" class="page-header__title">Наши товары</h1>
+                <p class="page-header__subtitle">Лучшие продукты для настоящих ценителей</p>
+            </section>
+            
+            
+            <section class="products" aria-labelledby="products-heading">
+                <h2 id="products-heading" class="visually-hidden">Список товаров</h2>
+                
+                
+                <div class="products__grid">
+                    
+                    
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="../images/rvotniki.jpg" alt="Сдобный рвотничек пряный" class="product-card__img">
+                        </div>
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Рвотничек</h3>
+                            <p class="product-card__price">15 руб.</p> <!-- Модификатор цены со скидкой -->
+                            <p class="product-card__description">Сдобный рвотничек пряный нормальный</p>
+                            <button class="product-card__button" aria-label="Добавить Рвотничек в корзину">
+                                В корзину
+                            </button>
+                        </div>
+                    </article>
+                    
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="../images/zuzish.jpg" alt="Зузыши миланские на развес 1 кг" class="product-card__img">
+                        </div>
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Зузыши 1 кг</h3>
+                            <p class="product-card__price">500 руб.</p>
+                            <p class="product-card__description">Зузыши на развес, толковые миланские зузыши</p>
+                            <button class="product-card__button" aria-label="Добавить Зузыши в корзину">
+                                В корзину
+                            </button> 
+                        </div>
+                    </article>
+                    
+                    <article class="product-card"> 
+                        <div class="product-card__image">
+                            <img src="../images/airman.webp" alt="Горный алтайский воздух" class="product-card__img">
+                        </div>
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Воздух алтайский</h3>
+                            <p class="product-card__price ">1000 руб.</p>
+                            <p class="product-card__description">Нормальный воздух, горный</p>
+                            <button class="product-card__button" aria-label="Добавить Воздух алтайский в корзину">
+                                В корзину
+                            </button>
+                        </div>
+                    </article>
+
+                    
+                    
+                </div>
+            </section>
+        </main>
+        
+        <!-- footer - блок -->
+        <footer class="footer footer--catalog"> 
+            <p class="footer__text">© 2025 Магазин уникальных товаров. Все права защищены.</p>
+        </footer>
+    </div>
+</body>
+</html>
