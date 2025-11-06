@@ -5,105 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Товары</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 
-<body>
-    <div class="page">
-        <header class="header bg-dark text-white text-center py-3">
-            <h1 class="header__title h3 mb-0">Каталог товаров</h1>
-        </header>
+<body class="d-flex flex-column min-vh-100">
+    <header class="bg-dark text-white text-center py-3">
+        <h1 class="h3 mb-0">Каталог товаров</h1>
+    </header>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100 justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="practices.html">Практики</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" href="goods.html">Товары</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container my-4 flex-grow-1">
+        <section class="text-center mb-4">
+            <h1 class="h2">Наши товары</h1>
+            <p class="lead text-muted">Лучшие продукты для настоящих ценителей</p>
+        </section>
         
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav w-100 justify-content-between">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Главная</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="news.html">Новости</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="practices.html">Практики</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active fw-bold" href="goods.html">Товары</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contacts.html">Контакты</a>
-                        </li>
-                    </ul>
+        <section class="products">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-img-top text-center p-3">
+                            <img src="../images/rvotniki.jpg" alt="Сдобный рвотничек пряный" class="img-fluid rounded" style="max-height: 200px; width: auto;">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Рвотничек</h3>
+                            <p class="card-text text-success h6">15 руб.</p>
+                            <p class="card-text flex-grow-1">Сдобный рвотничек пряный нормальный</p>
+                            <button class="btn btn-primary mt-auto" aria-label="Добавить Рвотничек в корзину">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-img-top text-center p-3">
+                            <img src="../images/zuzish.jpg" alt="Зузыши миланские на развес 1 кг" class="img-fluid rounded" style="max-height: 200px; width: auto;">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Зузыши 1 кг</h3>
+                            <p class="card-text text-success h6">500 руб.</p>
+                            <p class="card-text flex-grow-1">Зузыши на развес, толковые миланские зузыши</p>
+                            <button class="btn btn-primary mt-auto" aria-label="Добавить Зузыши в корзину">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-img-top text-center p-3">
+                            <img src="../images/airman.webp" alt="Горный алтайский воздух" class="img-fluid rounded" style="max-height: 200px; width: auto;">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Воздух алтайский</h3>
+                            <p class="card-text text-success h6">1000 руб.</p>
+                            <p class="card-text flex-grow-1">Нормальный воздух, горный</p>
+                            <button class="btn btn-primary mt-auto" aria-label="Добавить Воздух алтайский в корзину">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
-        
-        <main class="content container my-4">
-            <section class="page-header text-center mb-4">
-                <h1 class="page-header__title h2">Наши товары</h1>
-                <p class="page-header__subtitle">Лучшие продукты для настоящих ценителей</p>
-            </section>
-            
-            <section class="products">
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <article class="product-card border rounded p-3 h-100">
-                            <div class="product-card__image text-center">
-                                <img src="../images/rvotniki.jpg" alt="Сдобный рвотничек пряный" class="product-card__img img-fluid rounded">
-                            </div>
-                            <div class="product-card__info mt-3">
-                                <h3 class="product-card__title h5">Рвотничек</h3>
-                                <p class="product-card__price h6 text-success">15 руб.</p>
-                                <p class="product-card__description">Сдобный рвотничек пряный нормальный</p>
-                                <button class="product-card__button btn btn-primary w-100" aria-label="Добавить Рвотничек в корзину">
-                                    В корзину
-                                </button>
-                            </div>
-                        </article>
-                    </div>
-                    
-                    <div class="col-md-4 mb-4">
-                        <article class="product-card border rounded p-3 h-100">
-                            <div class="product-card__image text-center">
-                                <img src="../images/zuzish.jpg" alt="Зузыши миланские на развес 1 кг" class="product-card__img img-fluid rounded">
-                            </div>
-                            <div class="product-card__info mt-3">
-                                <h3 class="product-card__title h5">Зузыши 1 кг</h3>
-                                <p class="product-card__price h6 text-success">500 руб.</p>
-                                <p class="product-card__description">Зузыши на развес, толковые миланские зузыши</p>
-                                <button class="product-card__button btn btn-primary w-100" aria-label="Добавить Зузыши в корзину">
-                                    В корзину
-                                </button>
-                            </div>
-                        </article>
-                    </div>
-                    
-                    <div class="col-md-4 mb-4">
-                        <article class="product-card border rounded p-3 h-100">
-                            <div class="product-card__image text-center">
-                                <img src="../images/airman.webp" alt="Горный алтайский воздух" class="product-card__img img-fluid rounded">
-                            </div>
-                            <div class="product-card__info mt-3">
-                                <h3 class="product-card__title h5">Воздух алтайский</h3>
-                                <p class="product-card__price h6 text-success">1000 руб.</p>
-                                <p class="product-card__description">Нормальный воздух, горный</p>
-                                <button class="product-card__button btn btn-primary w-100" aria-label="Добавить Воздух алтайский в корзину">
-                                    В корзину
-                                </button>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-        </main>
-        
-        <footer class="footer bg-dark text-white text-center py-3">
-            <p class="footer__text mb-0">© 2025 Магазин уникальных товаров. Все права защищены.</p>
-        </footer>
-    </div>
+        </section>
+    </main>
+    
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <p class="mb-0">© 2025 Магазин уникальных товаров. Все права защищены.</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
