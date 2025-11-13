@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Тёмная</button>
     <!-- page - корневой блок -->
     <div class="page">
         
@@ -92,5 +93,16 @@
             <p class="footer__text">Футер</p>
         </footer>
     </div>
+    <script>
+    function toggleTheme() {
+        document.body.classList.toggle('theme-dark');
+        const button = document.querySelector('.theme-toggle');
+        if (document.body.classList.contains('theme-dark')) {
+            button.textContent = '☀️ Светлая';
+        } else {
+            button.textContent = '🌙 Тёмная';
+        }
+    }
+    </script>
 </body>
 </html>
