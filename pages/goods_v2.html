@@ -5,9 +5,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Товары</title>
+    
     <link rel="stylesheet" href="../styles/styles.css">
-</head>
+    <style>
+        /* Мобильная адаптация */
+@media (max-width: 768px) {
+    .products__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px 20px;
+    }
+    
+    .product-card {
+        border-radius: 12px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .product-card__image {
+        height: 220px;
+    }
+    
+    .product-card__info {
+        padding: 24px;
+    }
+    
+    .product-card__title {
+        font-size: 1.3em;
+        margin-bottom: 12px;
+    }
+    
+    .product-card__price {
+        font-size: 1.5em;
+        margin-bottom: 16px;
+    }
+    
+    .product-card__description {
+        font-size: 0.95em;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+    
+    .product-card__button {
+        padding: 14px 28px;
+        font-size: 1em;
+        border-radius: 8px;
+    }
+}
 
+@media (max-width: 480px) {
+    .products__grid {
+        padding: 20px 16px;
+        gap: 20px;
+    }
+    
+    .product-card {
+        border-radius: 10px;
+    }
+    
+    .product-card__image {
+        height: 200px;
+    }
+    
+    .product-card__info {
+        padding: 20px;
+    }
+    
+    .product-card__title {
+        font-size: 1.25em;
+    }
+    
+    .product-card__price {
+        font-size: 1.4em;
+    }
+    
+    .product-card__button {
+        padding: 13px 26px;
+        font-size: 0.95em;
+    }
+    
+    .nav__list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 0 10px;
+    }
+}
+
+/* Стили для скидки */
+.product-card--discount {
+    position: relative;
+    border: 2px solid #fa5252;
+    overflow: hidden;
+}
+
+.product-card--discount::before {
+    content: "СКИДКА";
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(135deg, #fa5252 0%, #e03131 100%);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 25px;
+    font-size: 0.8em;
+    font-weight: 700;
+    z-index: 2;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(250, 82, 82, 0.3);
+}
+
+@media (max-width: 768px) {
+    .product-card--discount::before {
+        top: 14px;
+        right: 14px;
+        padding: 5px 12px;
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card--discount::before {
+        top: 12px;
+        right: 12px;
+        padding: 4px 10px;
+        font-size: 0.7em;
+    }
+}
+
+.product-card__price--old {
+    text-decoration: line-through;
+    color: #a0aec0;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-right: 12px;
+    opacity: 0.8;
+}
+
+.product-card__price--new {
+    color: #fa5252;
+    font-size: 1.6em;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.product-card__price-container {
+    display: flex;
+    align-items: center;
+    margin: 0 0 16px 0;
+    gap: 8px;
+}
+
+/* Стили для активного состояния */
+.product-card:active {
+    transform: scale(0.97);
+    transition: transform 0.15s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+    </style>
+</head>
+<script>
+function toggleTheme() {
+    document.body.classList.toggle('theme-dark');
+    const button = document.querySelector('.theme-toggle');
+    if (document.body.classList.contains('theme-dark')) {
+        button.textContent = '☀️ Светлая';
+    } else {
+        button.textContent = '🌙 Тёмная';
+    }
+}
+</script>
 <body>
     
     <div class="page">
@@ -17,7 +183,7 @@
             <h1 class="header__title">Каталог товаров</h1>
         </header>
         
-        
+        <button class="theme-toggle" onclick="toggleTheme()">🌙 Тёмная</button>
         <nav class="nav" aria-label="Основная навигация">
             <ul class="nav__list">
                 <li class="nav__item">
@@ -55,13 +221,16 @@
                 <div class="products__grid">
                     
                     
-                    <article class="product-card">
+                    <article class="product-card product-card--discount">
                         <div class="product-card__image">
                             <img src="../images/rvotniki.jpg" alt="Сдобный рвотничек пряный" class="product-card__img">
                         </div>
                         <div class="product-card__info">
                             <h3 class="product-card__title">Рвотничек</h3>
-                            <p class="product-card__price">15 руб.</p> <!-- Модификатор цены со скидкой -->
+                            <div class="product-card__price-container">
+                                <span class="product-card__price--old">25 руб.</span>
+                                <span class="product-card__price--new">15 руб.</span>
+                            </div>
                             <p class="product-card__description">Сдобный рвотничек пряный нормальный</p>
                             <button class="product-card__button" aria-label="Добавить Рвотничек в корзину">
                                 В корзину
@@ -89,7 +258,7 @@
                         </div>
                         <div class="product-card__info">
                             <h3 class="product-card__title">Воздух алтайский</h3>
-                            <p class="product-card__price ">1000 руб.</p>
+                            <p class="product-card__price">1000 руб.</p>
                             <p class="product-card__description">Нормальный воздух, горный</p>
                             <button class="product-card__button" aria-label="Добавить Воздух алтайский в корзину">
                                 В корзину
