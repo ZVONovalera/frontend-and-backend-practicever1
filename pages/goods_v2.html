@@ -163,27 +163,16 @@
 }
     </style>
 </head>
-<script>
-function toggleTheme() {
-    document.body.classList.toggle('theme-dark');
-    const button = document.querySelector('.theme-toggle');
-    if (document.body.classList.contains('theme-dark')) {
-        button.textContent = '☀️ Светлая';
-    } else {
-        button.textContent = '🌙 Тёмная';
-    }
-}
-</script>
 <body>
     
     <div class="page">
-        
+        <button class="theme-toggle" onclick="toggleTheme()">🌙 Тёмная</button>
         
         <header class="header header--catalog"> 
             <h1 class="header__title">Каталог товаров</h1>
         </header>
         
-        <button class="theme-toggle" onclick="toggleTheme()">🌙 Тёмная</button>
+        
         <nav class="nav" aria-label="Основная навигация">
             <ul class="nav__list">
                 <li class="nav__item">
@@ -277,5 +266,16 @@ function toggleTheme() {
             <p class="footer__text">© 2025 Магазин уникальных товаров. Все права защищены.</p>
         </footer>
     </div>
+    <script>
+function toggleTheme() {
+    document.body.classList.toggle('theme-dark');
+    const button = document.querySelector('.theme-toggle');
+    if (document.body.classList.contains('theme-dark')) {
+        button.textContent = '☀️ Светлая';
+    } else {
+        button.textContent = '🌙 Тёмная';
+    }
+}
+</script>
 </body>
 </html>
